@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quote Generator</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/ico/ico.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <div class="language">
+        <img
+          class="flag"
+          id="en"
+          src="./assets/img/united-kingdom.png"
+          alt="Flag of England"
+        />
+        <img
+          class="flag unactive"
+          id="ru"
+          src="./assets/img/rusia.png"
+          alt="Flag of England"
+        />
+      </div>
+    </header>
+
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <p class="quote" id="quote" data-language="en">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas,
+            magni.
+          </p>
+          <p class="author" id="author">Lorem, ipsum.</p>
+          <button id="btn"></button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="copyrights">
+        <span class="copyrights__symbol">©</span>
+        <span class="copyrights__year">2022 </span>
+        <span class="copyrights__name">Alekseeva Tatyana</span>
+        <span class="git"
+          ><a
+            class="footer__link copyrights__link"
+            href="https://github.com/alekseeva-t-v"
+            target="_blank"
+            ><img class="git-logo" src="./assets/img/git-logo.png" alt="Git logo"></a
+          ></span
+        >
+      </div>
+    </footer>
+    <!-- Script -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

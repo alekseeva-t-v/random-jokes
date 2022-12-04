@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  background: url("../assets/img/01.jpg") center/cover, rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  transition: background-image 1s ease-in-out;
+}
+
+header {
+  min-height: 10vh;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  margin-top: 40px;
+}
+
+.language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  margin-top: 20px;
+}
+
+.flag {
+  width: 60px;
+  margin: 20px 30px 0 30px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.flag:hover {
+  width: 45px;
+}
+
+.unactive {
+  width: 50px;
+}
+
+.container {
+  width: 100%;
+  background-color: rgba(181, 159, 91, 0.7);
+  padding: 50px 40px;
+  box-shadow: 0 20px 65px rgba(87, 11, 16, 0.5);
+  position: relative;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.quote {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fdd8d8;
+}
+
+.author {
+  font-weight: 600;
+  color: #2a230f;;
+  margin: 40px 0 60px 0;
+  text-transform: uppercase;
+}
+
+
+.container button {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s; 
+  margin-bottom: 30px;
+  background-image: url("../assets/svg/reload.svg");  
+}
+
+.container button:hover {
+  opacity: 1;
+}
+
+.container button:active {
+  border: 0;
+  outline: 0;  
+  transform: scale(1.1);
+}
+
+.copyrights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fdd8d8;
+}
+
+.copyrights span {
+  padding: 10px;
+}
+
+.git-logo {
+  width: 30px;
+  transition: all 0.5s ease-in-out;
+}
+
+.git-logo:hover {
+  width: 35px;
+}
+
+@media screen and (max-width: 540px) {
+  .wrapper {
+    width: 300px;
+  }
+
+  .flag {
+    width: 45px;
+    margin: 10px 15px 0 15px;
+  }
+
+  .flag:hover {
+    width: 35px;
+  }
+  
+  .unactive {
+    width: 40px;
+  }
+
+  .quote {
+    font-size: 20px;
+  }
+
+  .author {
+    font-size: 16px;
+  }
+}

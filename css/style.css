@@ -52,11 +52,11 @@ main {
 }
 
 .flag:hover {
-  width: 45px;
+  width: 65px;
 }
 
 .unactive {
-  width: 50px;
+  width: 40px;
 }
 
 .container {
@@ -141,11 +141,11 @@ main {
   }
 
   .flag:hover {
-    width: 35px;
+    width: 50px;
   }
   
   .unactive {
-    width: 40px;
+    width: 30px;
   }
 
   .quote {

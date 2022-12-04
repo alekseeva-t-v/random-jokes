@@ -2,6 +2,7 @@ const body = document.querySelector('body');
 const quote = document.getElementById('quote');
 const author = document.getElementById('author');
 const btn = document.getElementById('btn');
+const language = document.querySelector('.language');
 const ruBtn = document.getElementById('ru');
 const enBtn = document.getElementById('en');
 const copyrightsName = document.querySelector('.copyrights__name');
@@ -23,7 +24,7 @@ function setBg(bgNum) {
 }
 
 ruBtn.addEventListener('click', () => {
-  quote.dataset.language = 'ru';
+  language.dataset.language = 'ru';
   enBtn.classList.add('unactive');
   ruBtn.classList.remove('unactive');
   copyrightsName.innerText = 'Алексеева Татьяна';
@@ -31,7 +32,7 @@ ruBtn.addEventListener('click', () => {
 });
 
 enBtn.addEventListener('click', () => {
-  quote.dataset.language = 'en';
+  language.dataset.language = 'en';
   ruBtn.classList.add('unactive');
   enBtn.classList.remove('unactive');
   copyrightsName.innerText = 'Alekseeva Tatyana';
@@ -56,8 +57,14 @@ async function getDataRu() {
   author.innerText = data[randomNum].author;
 }
 
-window.addEventListener('load', getDataEn);
 btn.addEventListener('click', function () {
-  getDataEn();
-  setBg(getRandomNum());
+  if (language.dataset.language === 'ru') {
+    getDataRu();
+    setBg(getRandomNum());
+  } else if (language.dataset.language === 'en') {
+    getDataEn();
+    setBg(getRandomNum());
+  }
 });
+
+window.addEventListener('load', getDataEn());

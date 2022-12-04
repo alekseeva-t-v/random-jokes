@@ -19,7 +19,7 @@ function getRandomNum() {
 }
 
 function setBg(bgNum) {
-  body.style.backgroundImage = `url('../assets/img/${bgNum}.jpg')`;
+  body.style.backgroundImage = `url('./assets/img/${bgNum}.jpg')`;
 }
 
 ruBtn.addEventListener('click', () => {

@@ -2,6 +2,8 @@
 
 Учебный проект, предназначенный для получения опыта работы с API - асинхронного получения данных и отображения их на странице.
 
+![demo](./public/images/quote.jpg)
+
 ## **Описание проекта**
 
 * При загрузке страницы приложения отображается рандомная цитата.
@@ -18,5 +20,5 @@
 ![JS](./public/images/js.svg)
 ![GIT](./public/images/git.svg)
 
-## [**Демо**](https://star-wars-ruby-pi.vercel.app/)
+## [**Демо**](https://alekseeva-t-v.github.io/random-jokes/)
 ![demo](./public/images/demo.jpg)

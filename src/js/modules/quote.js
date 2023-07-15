@@ -54,7 +54,7 @@ function showQuote(lang) {
   function quoteUpdate() {
     getQuote();
     const bgNum = getRandomNum();
-    main.style.backgroundImage = `url('../img/${bgNum}.jpg')`;
+    main.style.backgroundImage = `url('./img/${bgNum}.jpg')`;
   }
 
   btn.addEventListener('click', quoteUpdate);

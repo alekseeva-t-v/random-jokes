@@ -5,9 +5,11 @@
  */
 function showQuote(lang) {
   const main = document.querySelector('main');
+  const quoteContainer = document.querySelector('.quote-container')
   const quote = document.getElementById('quote');
   const author = document.getElementById('author');
   const btn = document.getElementById('btn');
+  const preloader = document.getElementById('preloader')
 
   let randomNum;
 
@@ -39,12 +41,21 @@ function showQuote(lang) {
    *
    */
   async function getQuote() {
-    let quotes = `./files/json/quote-${lang}.json`;
-    const res = await fetch(quotes);
-    const data = await res.json();
-    const randomNum = getRandomIntInclusive(0, data.length - 1);
-    quote.innerText = data[randomNum].text;
-    author.innerText = data[randomNum].author;
+    const URL = `./files/json/quote-${lang}.json`;
+    try {
+      const response = await fetch(URL);
+      if (!response.ok) {
+        throw new Error('Something went wrong...');
+      }
+      const data = await response.json();
+      const randomNum = getRandomIntInclusive(0, data.length - 1);
+      quote.innerText = data[randomNum].text;
+      author.innerText = data[randomNum].author;
+      preloader.remove();
+      quoteContainer.style.display = 'block';
+    } catch {
+      quoteWrapper.textContent = '';
+    }
   }
 
   /**
@@ -54,7 +65,11 @@ function showQuote(lang) {
   function quoteUpdate() {
     getQuote();
     const bgNum = getRandomNum();
-    main.style.backgroundImage = `url('./img/${bgNum}.jpg')`;
+    const img = new Image();
+    img.src = `./img/jpg/${bgNum}.jpg`;
+    img.addEventListener('load', () => {
+      main.style.backgroundImage = `url(${img.src})`;
+    });
   }
 
   btn.addEventListener('click', quoteUpdate);

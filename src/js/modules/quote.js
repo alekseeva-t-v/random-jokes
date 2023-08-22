@@ -4,7 +4,7 @@
  * @param {string} lang Язык отображения.
  */
 function showQuote(lang) {
-  const main = document.querySelector('main');
+  const quoteWrapper = document.querySelector('.quote-wrapper');
   const quoteContainer = document.querySelector('.quote-container')
   const quote = document.getElementById('quote');
   const author = document.getElementById('author');
@@ -68,7 +68,7 @@ function showQuote(lang) {
     const img = new Image();
     img.src = `./img/jpg/${bgNum}.jpg`;
     img.addEventListener('load', () => {
-      main.style.backgroundImage = `url(${img.src})`;
+      quoteWrapper.style.backgroundImage = `url(${img.src})`;
     });
   }
 

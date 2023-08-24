@@ -6,14 +6,20 @@ html,
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   font-family: 'Wix Madefor Text', sans-serif;;
   letter-spacing: 0.5px;
   scroll-behavior: smooth;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .main {
-  height: 90vh;
+  flex-grow: 1;
   width: 100%;
   background-color: var(--page-bg);
 }

@@ -4,8 +4,8 @@
  * @param {string} lang Язык отображения.
  */
 function showQuote(lang) {
-  const quoteWrapper = document.querySelector('.quote-wrapper');
-  const quoteContainer = document.querySelector('.quote-container')
+  const quoteWrapper = document.querySelector('.quote__inner');
+  const quoteContainer = document.querySelector('.quote__container')
   const quote = document.getElementById('quote');
   const author = document.getElementById('author');
   const btn = document.getElementById('btn');

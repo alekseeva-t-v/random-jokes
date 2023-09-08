@@ -3,15 +3,17 @@
  *
  * @param {string} lang Язык отображения.
  */
-function showQuote(lang) {
+function showQuote() {
   const quoteWrapper = document.querySelector('.quote__inner');
-  const quoteContainer = document.querySelector('.quote__container')
+  const quoteContainer = document.querySelector('.quote__container');
   const quote = document.getElementById('quote');
   const author = document.getElementById('author');
   const btn = document.getElementById('btn');
-  const preloader = document.getElementById('preloader')
+  const preloader = document.getElementById('preloader');
+  const btnLang = document.querySelector('.lang-btn');
 
   let randomNum;
+  let lang = 'ru';
 
   /**
    * Возвращает случайное число в заданном интервале включительно.
@@ -35,6 +37,19 @@ function showQuote(lang) {
     randomNum = getRandomIntInclusive(1, 20);
     return String(randomNum).padStart(2, '0');
   }
+
+  /**
+ * Отвечает за смену языка приложения
+ */
+function changeURLLanguageHandler() {
+  if (!btnLang.classList.contains('lang-btn--active')) {
+    btnLang.classList.add('lang-btn--active');
+    lang = 'en';
+  } else {
+    btnLang.classList.remove('lang-btn--active');
+    lang = 'ru';
+  }
+}
 
   /**
    * Получает цитату и выводит ее на странице.
@@ -73,6 +88,11 @@ function showQuote(lang) {
   }
 
   btn.addEventListener('click', quoteUpdate);
+
+  btnLang.addEventListener('click', () => {
+    changeURLLanguageHandler();
+    quoteUpdate()
+  });
 
   window.addEventListener('load', quoteUpdate);
 }
